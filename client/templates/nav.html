@@ -27,6 +27,11 @@
         </li>
       </ul>
     </li>
+    {{#if isInRole 'admin'}}
+    <li>
+      <a href="/admin">Admin</a>
+    </li>
+    {{/if}}
   </ul>
   <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 </nav>
