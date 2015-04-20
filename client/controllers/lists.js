@@ -100,15 +100,5 @@ Template.sortable.events({
     // `this` is the data context set by the enclosing block helper (#each, here)
     template.collection.remove(this._id);
     Files.remove(this.fileId);
-    // custom code, working on a specific collection
-    if (Attributes.find().count() === 0) {
-      Meteor.setTimeout(function () {
-        Attributes.insert({
-          name: 'Not nice to delete the entire list! Add some attributes instead.',
-          type: 'String',
-          order: 0
-        })
-      }, 1000);
-    }
   }
 });
