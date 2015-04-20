@@ -99,6 +99,7 @@ Template.sortable.events({
   'click .close': function (event, template) {
     // `this` is the data context set by the enclosing block helper (#each, here)
     template.collection.remove(this._id);
+    Files.remove(this.fileId);
     // custom code, working on a specific collection
     if (Attributes.find().count() === 0) {
       Meteor.setTimeout(function () {
