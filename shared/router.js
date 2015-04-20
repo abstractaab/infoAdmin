@@ -23,6 +23,10 @@ Router.route('/collections/list', {
   template: 'CollectionsList',
 });
 
+Router.route('/admin', {
+  template: 'admin',
+});
+
 Router.configure({
     loadingTemplate: 'loading',
     notFoundTemplate: 'notFound',
