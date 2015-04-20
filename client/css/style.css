@@ -38,7 +38,7 @@ optgroup {
 }
 
 .select-dropdown {
-    z-index: 9999;
+    z-index: 500;
 }
 
 .at-error {
