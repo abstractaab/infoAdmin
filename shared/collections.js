@@ -1,5 +1,3 @@
-Images = new Mongo.Collection('images');
-
 Types = new Mongo.Collection('types');
 Attributes = new Mongo.Collection('attributes');
 Collections = new Mongo.Collection('collections');
