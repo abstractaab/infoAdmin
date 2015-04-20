@@ -1,6 +1,21 @@
 <template name="filesAdd">
 	<div class="container">
-		<h1>Add new file</h1>
+		<div class="row">
+			<div class="col s8">
+				<h1>Add new file</h1>
+			</div>
+			<div class="col s4">
+				<div class="card-panel teal">
+					<span class="white-text">
+						<ul>
+							<li>Image resolution: 1920x1080</li>
+							<li>JPG (medium) for photos</li>
+							<li>PNG for graphics</li>
+						</ul>
+					</span>
+				</div>
+			</div>
+		</div>
 		{{#autoForm id="insertImage" type="insert" collection="Attributes"}}
 			<div class="row">
 				<div class="col s6">
