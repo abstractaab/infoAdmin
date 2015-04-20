@@ -31,3 +31,6 @@ Router.configure({
 
 Router.plugin('ensureSignedIn');
 
+AccountsTemplates.configureRoute('ensureSignedIn', {
+    layoutTemplate: 'blank',
+});
