@@ -33,7 +33,7 @@ Template.filesCreate.onRendered(function() {
 	canvas.renderAll();
 
 	canvas.on('object:selected', function(e) {
-		console.log("selected");
+		//console.log("selected");
 	})
 });
 
@@ -58,7 +58,6 @@ Template.filesCreate.helpers({
 		var array = [];
 		Collections.find({}).fetch().forEach(function (post) {
 			array.push({label: post.title, value: post._id});
-			console.log(post);
 		});
 		return array;
 	}
@@ -89,8 +88,6 @@ Template.filesCreate.events({
 		}
 	},
 	'change .inputTextColor': function(e) {
-		console.log(e);
-		console.log(e.target.value)
 		var activeObject = canvas.getActiveObject();
 		activeObject.setColor('#' + e.target.value)
 		canvas.renderAll();
@@ -114,10 +111,8 @@ Template.filesCreate.events({
 	},
 	'submit .imageSave': function(e) {
 		e.preventDefault();
-		console.log(e)
 		var collection = e.target.collection.value
 		var order = Attributes.find({collection: collection}).count();
-		console.log(order)
 		if(e.target.collection.value) {
 			var id = Files.insert(Session.get('image'));
 			Attributes.insert({
@@ -134,7 +129,6 @@ Template.filesCreate.events({
 	'click .objCenter': function(e) { // center object on canvas
 		var activeObject = canvas.getActiveObject();
 		var value = e.target.value;
-		console.log(value)
 		if (activeObject) {
 			var zoomOld = canvas.getZoom();
 			zoom(1);
@@ -152,9 +146,7 @@ Template.filesCreate.events({
 		}
 	},
 	'click .objAdd': function(e) {
-		console.log("Add object");
 		var add = e.target.value;
-		console.log(add)
 		if(add === 'logo') {
 			fabric.loadSVGFromURL('/logo.svg', function(objects, options) {
 				var obj = fabric.util.groupSVGElements(objects, options);
@@ -180,16 +172,12 @@ Template.filesCreate.events({
 	},
 	'click .textAlign': function(e) {
 		var activeObject = canvas.getActiveObject();
-		console.log("click")
 		if(activeObject) {
-			console.log("object")
-			console.log(e.target.value)
 			activeObject.setTextAlign(e.target.value);
 			canvas.renderAll();
 		}	
 	},
 	'click .imageFullscreen': function(e) {
-		console.log(e);
 		fullScreenFunc(e.currentTarget);
 	}
 });
