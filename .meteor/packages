@@ -6,7 +6,7 @@
 
 meteor-platform
 #autopublish
-insecure
+#insecure
 wiseguyeh:accounts-azure-active-directory
 accounts-ui
 iron:router
@@ -24,3 +24,4 @@ cfs:gridfs
 cfs:graphicsmagick
 useraccounts:materialize
 email
+ongoworks:security
