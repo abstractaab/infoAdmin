@@ -37,8 +37,6 @@ Router.route('/xml/:collection', function () {
   }, {
     sort: { order: 1 }
   });
-  console.log(this.params.collection);
-  console.log(images);
   var req = this.request;
   var res = this.response;
   var xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
@@ -52,7 +50,7 @@ Router.route('/xml/:collection', function () {
     xmlData += "\t<item>\n";
       xmlData += "\t\t<title>" + post.name + "</title>\n";
       xmlData += "\t\t<guid>" + post._id + "</guid>\n";
-      xmlData += "\t\t<description>" + Meteor.absoluteUrl() + url + "</description>\n";
+      xmlData += "\t\t<description>" + Meteor.absoluteUrl().replace(/\/+$/, "") + url + "</description>\n";
     xmlData += "\t</item>\n";
   });
   //xmlData += "<Say voice=\"woman\" language=\"en\">Hello!</Say>";
