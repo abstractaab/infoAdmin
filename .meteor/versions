@@ -81,6 +81,7 @@ observe-sequence@1.0.6
 ongoworks:security@1.1.0
 ordered-dict@1.0.3
 raix:eventemitter@0.1.2
+raix:ui-dropped-event@0.0.7
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
