@@ -21,6 +21,8 @@ Template.listCollections.helpers({
 
 Template.listCollections.events({
 	'click .delete': function () {
-		Collections.remove(this._id);
+		if(confirm("Are you sure? This will have consequences")) {
+			Collections.remove(this._id);
+		}
 	}
 });
