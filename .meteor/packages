@@ -7,7 +7,7 @@
 meteor-platform
 #autopublish
 #insecure
-wiseguyeh:accounts-azure-active-directory
+#wiseguyeh:accounts-azure-active-directory
 accounts-ui
 iron:router
 accounts-password
