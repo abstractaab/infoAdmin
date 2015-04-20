@@ -40,3 +40,7 @@ optgroup {
 .select-dropdown {
     z-index: 9999;
 }
+
+.at-error {
+    color: #fff;
+}
