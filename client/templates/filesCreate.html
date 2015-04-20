@@ -97,16 +97,22 @@
 	</div>
 	<div id="modal1" class="modal">
 		<form class="imageSave">
-			<div class="modal-content">
-				<div class="max-width">
-					<img class="imageFullscreen" src="{{image}}">
+			<div class="modal-content row">
+				<div class="col m9">
+					<div class="max-width">
+						<img class="imageFullscreen" src="{{image}}">
+					</div>
 				</div>
-				<select name="collection">
-					<option value="" disabled selected>(Select One)</option>
-					{{#each collections}}
-						<option value="{{value}}">{{label}}</option>
-					{{/each}}
-				</select>
+				<div class="col m3">
+					<h5>Save image to collection</h5>
+					<p>This will be published immediately to all feeds using this collection</p>
+					<select name="collection">
+						<option value="" disabled selected>(Select One)</option>
+						{{#each collections}}
+							<option value="{{value}}">{{label}}</option>
+						{{/each}}
+					</select>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="submit" class="waves-effect waves-light btn">Save image</button>

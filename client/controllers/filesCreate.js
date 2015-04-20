@@ -178,6 +178,7 @@ Template.filesCreate.events({
 		}	
 	},
 	'click .imageFullscreen': function(e) {
-		fullScreenFunc(e.currentTarget);
+		// buggy in modal
+		//fullScreenFunc(e.currentTarget);
 	}
 });
