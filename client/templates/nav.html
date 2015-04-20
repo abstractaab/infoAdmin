@@ -1,0 +1,32 @@
+<template name="nav">
+<nav>
+  <ul id="slide-out" class="side-nav fixed">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/collections/list">List files</a>
+    </li>
+    <li>
+      <a href="/files/create">Create file</a>
+    </li>
+    <li>
+      <a href="/files/add">Add files</a>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Collections</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/collections/add">Add</a></li>
+              <li><a href="/collections/list">List</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+</template>

@@ -1,0 +1,124 @@
+<template name="filesCreate">
+	<div class="row center-block">
+		<div class="col s4 ">
+			<ul class="collection">
+				<li class="collection-item">
+					<button class="waves-effect waves-light btn-flat objAdd" value="text">
+						<i class="mdi-av-playlist-add left"></i> text
+					</button>
+				</li>
+				<li class="collection-item">
+					<button class="waves-effect waves-light btn-flat objAdd" value="logo">
+						<i class="mdi-av-playlist-add left"></i> logo
+					</button>
+				</li>
+				<li class="collection-item">
+					<button class="btn-flat objCenter" value="xy">
+						XY
+					</button>
+					<button class="btn-flat objCenter" value="x">
+						X
+					</button>
+					<button class="btn-flat objCenter" value="y">
+						Y
+					</button>
+				</li>
+				<li class="collection-item">
+					<div class="row row--nomargin">
+						<button class="btn-flat textAlign col s3" value="left">
+							<i class="mdi-editor-format-align-left"></i>
+						</button>
+						<button class="btn-flat textAlign col s3" value="center">
+							<i class="mdi-editor-format-align-center"></i>
+						</button>
+						<button class="btn-flat textAlign col s3" value="right">
+							<i class="mdi-editor-format-align-right"></i>
+						</button>
+						<button class="btn-flat textAlign col s3" value="justify">
+							<i class="mdi-editor-format-align-justify"></i>
+						</button>
+					</div>
+				</li>
+				<li class="collection-item">
+					<div class="input-field">
+						<select class="inputFontFamily">
+							{{#each fonts}}
+								<option value="{{name}}">{{name}}</option>
+							{{/each}}
+						</select>
+					</div>
+				</li>
+				<li class="collection-item">
+					<div class="input-field">
+						<i class="mdi-editor-format-color-text prefix"></i>
+						<input id="objectColor" type="text" class="color inputTextColor " name="textcolor">
+					</div>
+				</li>
+
+				<li class="collection-item">
+					<div class="input-field">
+						<i class="mdi-editor-format-color-fill prefix"></i>
+						<input id="objectColor" type="text" class="color inputBackgroundColor " name="textcolor">
+					</div>
+				</li>
+				<li class="collection-item">
+					<button class="waves-effect waves-light btn-flat objRem">
+						<i class="mdi-action-delete left"></i> Delete
+					</button>
+				</li>
+			</ul>
+			<!--
+			Font size:
+			<p class="range-field">
+				<input type="range" class="range inputFontSize" value="150" min="150" max="300" step="10">
+			</p>
+			Font weight:
+			<p class="range-field">
+				<input type="range" class="range inputFontWeight" value="400" min="400" max="800" step="200">
+			</p>
+			-->
+			<button class="imageCreate btn">Generate image</button>
+			{{#if image}}
+				<a class="btn" href="{{image}}" download>Save image</a>
+				<div class="divider"></div>
+				<div class="max-width">
+					<img class="imageFullscreen" src="{{image}}">
+				</div>
+				
+			{{/if}}
+			<!--
+			<button class="toggle-bg">Toggle bg</button>
+			<button class="bg2">bg2</button>
+			-->
+		</div>
+		<div class="col s8">
+			<p class="range-field">
+				<input type="range" class="range zoomCanvas" id="scale-control" value="0.4" min="0.1" max="1" step="0.1">
+			</p>
+			<canvas id="c" style="border: 1px solid #ccc"></canvas>
+		</div>
+	</div>
+	<div id="modal1" class="modal bottom-sheet">
+		{{#autoForm id="insertImageCreated" type="insert" collection="Attributes"}}
+		<div class="modal-content">
+			<div class="row">
+				<div class="col s6 offset-s3">
+						{{> afQuickField name="name"}}
+						{{> afQuickField name="collection" }}
+						{{> afQuickField name="fileId" }}
+						{{> afQuickField name="validUntil" type="pickadate"}}
+				</div>
+				<div class="col s3 max-width">
+
+					<img src="{{image}}">
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="submit" class="waves-effect waves-light btn">Save image</button>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+		</div>
+		{{/autoForm}}
+	</div>
+
+</template>

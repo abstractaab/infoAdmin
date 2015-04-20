@@ -1,0 +1,30 @@
+<template name="filesAdd">
+	<div class="container">
+		<h1>Add new file</h1>
+		{{#autoForm id="insertImage" type="insert" collection="Attributes"}}
+			<div class="row">
+				<div class="col s6">
+					{{> afQuickField name="name"}}
+					{{> afQuickField name="collection" }}
+					{{> afQuickField name="validUntil" type="pickadate"}}
+					<button type="submit" class="waves-effect waves-light btn">
+					  <i class="mdi-content-send right"></i>
+					  Insert
+					</button>
+				</div>
+				<div class="col s6">
+					{{> afQuickField name="fileId" }}
+
+				</div>
+			</div>
+		{{/autoForm}}
+	</div>
+</template>
+
+<template name="filesList">
+	<div class="container">
+		<h1>List files</h1>
+
+		{{> typeDefinition}}
+	</div>
+</template>
