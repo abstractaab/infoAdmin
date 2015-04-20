@@ -1,6 +1,12 @@
 <template name="nav">
-<nav>
-  <a href="#" class="brand-logo center">Infoscreens dashboard</a>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <a href="#" class="brand-logo center">Infoscreen</a>
+      </div>
+    </nav>
+  </header>
   <ul id="slide-out" class="side-nav fixed">
     <li>
       <a href="/">Home</a>
@@ -26,6 +32,5 @@
       <a href="/change-password">Change password</a>
     </li>
   </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-</nav>
+  
 </template>

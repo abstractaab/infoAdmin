@@ -1,10 +1,10 @@
 <template name="filesAdd">
 	<div class="container">
 		<div class="row">
-			<div class="col s8">
+			<div class="col m8">
 				<h2>Add new file</h2>
 			</div>
-			<div class="col s4">
+			<div class="col m4">
 				<div class="card-panel teal">
 					<span class="white-text">
 						<ul>
@@ -18,7 +18,7 @@
 		</div>
 		{{#autoForm id="insertImage" type="insert" collection="Attributes"}}
 			<div class="row">
-				<div class="col s6">
+				<div class="col m6">
 					{{> afQuickField name="name"}}
 					{{> afQuickField name="collection" }}
 					{{> afQuickField name="validUntil" type="pickadate"}}
@@ -27,7 +27,7 @@
 					  Insert
 					</button>
 				</div>
-				<div class="col s6">
+				<div class="col m6">
 					{{> afQuickField name="fileId" }}
 
 				</div>
