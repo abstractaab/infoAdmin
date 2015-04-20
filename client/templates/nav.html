@@ -6,26 +6,16 @@
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="/collections/list">List files</a>
+      <a href="/collections/list">Files</a>
     </li>
     <li>
       <a href="/files/create">Create file</a>
     </li>
     <li>
-      <a href="/files/add">Add files</a>
+      <a href="/files/add">Add file</a>
     </li>
-    <li class="no-padding">
-      <ul class="collapsible collapsible-accordion">
-        <li>
-          <a class="collapsible-header">Collections</a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="/collections/add">Add</a></li>
-              <li><a href="/collections/list">List</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+    <li>
+      <a href="/collections/add">Add collection</a>
     </li>
     {{#if isInRole 'admin'}}
     <li>
