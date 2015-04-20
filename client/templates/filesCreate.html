@@ -66,6 +66,9 @@
 						<i class="mdi-action-delete left"></i> Delete
 					</button>
 				</li>
+				<li class="collection-item">
+					<button class="imageCreate btn">Generate image</button>
+				</li>
 			</ul>
 			<!--
 			Font size:
@@ -77,13 +80,7 @@
 				<input type="range" class="range inputFontWeight" value="400" min="400" max="800" step="200">
 			</p>
 			-->
-			<button class="imageCreate btn">Generate image</button>
 			{{#if image}}
-				<a class="btn" href="{{image}}" download>Save image</a>
-				<div class="divider"></div>
-				<div class="max-width">
-					<img class="imageFullscreen" src="{{image}}">
-				</div>
 				
 			{{/if}}
 			<!--
@@ -98,27 +95,23 @@
 			<canvas id="c" style="border: 1px solid #ccc"></canvas>
 		</div>
 	</div>
-	<div id="modal1" class="modal bottom-sheet">
-		{{#autoForm id="insertImageCreated" type="insert" collection="Attributes"}}
-		<div class="modal-content">
-			<div class="row">
-				<div class="col s6 offset-s3">
-						{{> afQuickField name="name"}}
-						{{> afQuickField name="collection" }}
-						{{> afQuickField name="fileId" }}
-						{{> afQuickField name="validUntil" type="pickadate"}}
+	<div id="modal1" class="modal">
+		<form class="imageSave">
+			<div class="modal-content">
+				<div class="max-width">
+					<img class="imageFullscreen" src="{{image}}">
 				</div>
-				<div class="col s3 max-width">
-
-					<img src="{{image}}">
-				</div>
+				<select name="collection">
+					<option value="" disabled selected>(Select One)</option>
+					{{#each collections}}
+						<option value="{{value}}">{{label}}</option>
+					{{/each}}
+				</select>
 			</div>
-		</div>
-		<div class="modal-footer">
-			<button type="submit" class="waves-effect waves-light btn">Save image</button>
-			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-		</div>
-		{{/autoForm}}
+			<div class="modal-footer">
+				<button type="submit" class="waves-effect waves-light btn">Save image</button>
+			</div>
+		</form>
 	</div>
 
 </template>

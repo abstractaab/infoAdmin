@@ -53,6 +53,14 @@ Template.filesCreate.helpers({
 			//{name: 'Comic Sans MS'}
 		]
 		return fonts
+	},
+	collections: function() {
+		var array = [];
+		Collections.find({}).fetch().forEach(function (post) {
+			array.push({label: post.title, value: post._id});
+			console.log(post);
+		});
+		return array;
 	}
 });
 
@@ -102,30 +110,26 @@ Template.filesCreate.events({
 		var img = canvas.toDataURL('png');
 		zoom(zoomOld);
 		Session.set('image', img);
+		$('#modal1').openModal();
 	},
-	/*
-	// generate image
-	'click .imageDownload': function() {
-		var zoomOld = canvas.getZoom();
-		canvas.deactivateAll().renderAll();
-		zoom(1);
-		var img = canvas.toDataURL('png');
-		var data = base64Data.replace('data:image/png;base64,', '');
-		zoom(zoomOld);
-		Session.set('image', img);
-	},*/
-	// test functions
-	'click .toggle-bg': function () {
-		canvas.setBackgroundImage('', canvas.renderAll.bind(canvas));
-		if (canvas.backgroundColor instanceof fabric.Pattern) {
-			canvas.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
+	'submit .imageSave': function(e) {
+		e.preventDefault();
+		console.log(e)
+		var collection = e.target.collection.value
+		var order = Attributes.find({collection: collection}).count();
+		console.log(order)
+		if(e.target.collection.value) {
+			var id = Files.insert(Session.get('image'));
+			Attributes.insert({
+				collection: collection,
+				fileId: id._id,
+				order: order
+			});
+			$('#modal1').closeModal();
 		}
-		else {
-			canvas.setBackgroundColor({source: '/bg.png'}, canvas.renderAll.bind(canvas));
-		}
-	},
-	'click .bg2': function () {
-		canvas.setBackgroundImage('/bg3.jpg', canvas.renderAll.bind(canvas));
+		//$('#modal1').closeModal();
+		//if(e.target.collection.value)
+		//;
 	},
 	'click .objCenter': function(e) { // center object on canvas
 		var activeObject = canvas.getActiveObject();
@@ -187,14 +191,5 @@ Template.filesCreate.events({
 	'click .imageFullscreen': function(e) {
 		console.log(e);
 		fullScreenFunc(e.currentTarget);
-		//fullScreenFunc('<img class="imageFullscreen" src="' + Session.get('image') + '">');
-		/*
-		console.log(Session.get('image-preview'))
-		if(Session.get('image-preview')) {
-			Session.set('image-preview', false);
-		}
-		else {
-			Session.set('image-preview', true);
-		}*/
 	}
 });
