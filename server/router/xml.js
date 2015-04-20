@@ -6,7 +6,7 @@ Router.route('/xml/:collection', function () {
   });
   var req = this.request;
   var res = this.response;
-  var xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+  var xmlData = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><rss version=\"2.0\">\n";
   xmlData += "<channel>\n";
   xmlData += "\t<title>RSS</title>\n";
   xmlData += "\t<link>http://www.abstracta.se</link>\n";
@@ -22,6 +22,7 @@ Router.route('/xml/:collection', function () {
   });
   //xmlData += "<Say voice=\"woman\" language=\"en\">Hello!</Say>";
   xmlData += "</channel>\n";
+  xmlData += "</rss>\n";
 
   this.response.writeHead(200, {'Content-Type': 'application/xml'});
   this.response.end(xmlData);
