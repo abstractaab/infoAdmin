@@ -1,29 +1,25 @@
 <template name="typeDefinition">
-  <div class="container">
-    <div class="sortable target row" id="object">
-      {{#sortable items=attributes animation="100" handle=".sortable-handle" ghostClass="sortable-ghost" options=attributesOptions}}
-        {{> sortableItemTarget}}
-      {{/sortable}}
-    </div>
+  <div class="sortable target row" id="object">
+    {{#sortable items=attributes animation="100" handle=".sortable-handle" ghostClass="sortable-ghost" options=attributesOptions}}
+      {{> sortableItemTarget}}
+    {{/sortable}}
   </div>
 </template>
 
 <template name="sortableItemTarget">
-  <div class="container">
-    <div data-id="{{order}}" class="sortable-item removable well well-sm col s4">
-      <div class="card {{collectionClass collection}} sortable-handle">
-        <div class="card-image">
-          {{#with image fileId}}
-          <img src="{{this.url store=''}}">
-          {{/with}}
-        </div>
-        <div class="card-content white-text">
-          <span class="name">{{name}}</span><br>
-          Order {{order}}
-        </div>
-        <div class="card-action">
-          <a class="close">Remove</a>
-        </div>
+  <div data-id="{{order}}" class="sortable-item removable well well-sm col s4">
+    <div class="card {{collectionClass collection}} sortable-handle">
+      <div class="card-image">
+        {{#with image fileId}}
+        <img src="{{this.url store=''}}">
+        {{/with}}
+      </div>
+      <div class="card-content white-text">
+        <span class="name">{{name}}</span><br>
+        Order {{order}}
+      </div>
+      <div class="card-action">
+        <a class="close">Remove</a>
       </div>
     </div>
   </div>
