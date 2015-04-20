@@ -17,7 +17,7 @@ Router.route('/xml/:collection', function () {
     xmlData += "\t<item>\n";
       xmlData += "\t\t<title>" + post.name + "</title>\n";
       xmlData += "\t\t<guid>" + post._id + "</guid>\n";
-      xmlData += "\t\t<description>" + Meteor.absoluteUrl().replace(/\/+$/, "") + url + "</description>\n";
+      xmlData += "\t\t<description>" + Meteor.absoluteUrl('',{secure: false}).replace(/\/+$/, "") + url + "</description>\n";
     xmlData += "\t</item>\n";
   });
   //xmlData += "<Say voice=\"woman\" language=\"en\">Hello!</Say>";
