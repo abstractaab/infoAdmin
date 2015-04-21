@@ -28,6 +28,5 @@ Template.dropZone.helpers({
 });
 
 Template.dropZone.onRendered(function() {
-  console.log('hej');
   Session.set('dropHover', null);
 })
