@@ -114,7 +114,10 @@ Template.filesCreate.events({
 		var collection = e.target.collection.value
 		var order = Attributes.find({collection: collection}).count();
 		if(e.target.collection.value) {
-			var id = Files.insert(Session.get('image'));
+			var newFile = new FS.File();
+			newFile.attachData(Session.get('image'))
+			newFile.name("createdImage.png");
+			var id = Files.insert(newFile);
 			Attributes.insert({
 				collection: collection,
 				fileId: id._id,
