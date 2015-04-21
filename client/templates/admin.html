@@ -17,21 +17,5 @@
 				Create user
 			</button>
 		</form>
-		{{#if error}}
-			<div class="red lighten-2">
-				<span class="flow-text white-text">
-					<i class="mdi-alert-error"></i>
-					{{error.error}} - {{error.reason}}
-				</span>
-			</div>
-		{{/if}}
-		{{#if newUser}}
-			<div class="green accent-2">
-				<span class="flow-text">
-					<i class="mdi-action-account-circle"></i>
-					Created user {{newUser}}
-				</span>
-			</div>
-		{{/if}}
 	</div>
 </template>

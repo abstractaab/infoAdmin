@@ -121,6 +121,7 @@ Template.filesCreate.events({
 				order: order
 			});
 			$('#modal1').closeModal();
+			toastr.success("File saved");
 		}
 		//$('#modal1').closeModal();
 		//if(e.target.collection.value)
