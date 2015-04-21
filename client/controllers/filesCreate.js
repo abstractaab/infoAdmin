@@ -7,7 +7,7 @@ Template.filesCreate.onRendered(function() {
 		selectYears: 15 // Creates a dropdown of 15 years to control year
 	});
 
-	jscolor.install();
+	jscolor.init();
 
 	zoom = function(zoomLevel) {
 		canvas.setZoom(zoomLevel);
