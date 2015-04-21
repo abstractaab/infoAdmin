@@ -46,6 +46,10 @@ Collections.attachSchema(new SimpleSchema({
         ];
       }
     }
+  },
+  locked: {
+    type: Boolean,
+    optional: true
   }
 }));
 

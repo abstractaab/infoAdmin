@@ -41,6 +41,14 @@
 		<div class="row">
 			<div class="col m6">
 				<h1>List files</h1>
+				<div class="switch">
+					<label>
+						Unlocked
+						<input class="locked" type="checkbox" checked="{{collection.locked}}">
+						<span class="lever"></span>
+						Locked
+					</label>
+				</div>
 			</div>
 			<div class="col m6">
 				{{>dropZone}}

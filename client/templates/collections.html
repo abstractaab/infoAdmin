@@ -33,9 +33,11 @@
 			<div>
 				<a href="/files/{{_id}}">{{title}}</a><br>
 				<code>{{rootUrl}}xml/{{_id}}</code>
+				{{#unless locked}}
 				<a href="#!" class="secondary-content delete">
 					<i class="mdi-content-remove-circle"></i>
 				</a>
+				{{/unless}}
 			</div>
 		</li>
 		{{/each}}
