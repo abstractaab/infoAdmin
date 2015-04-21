@@ -13,3 +13,7 @@ Template.filesList.events({
 		});
 	}
 });
+
+Template.filesList.onRendered(function() {
+	$('.tooltipped').tooltip({delay: 50});
+})
