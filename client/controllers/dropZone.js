@@ -1,6 +1,6 @@
 Template.dropZone.events({
   'dropped #dropzone': function(event, temp) {
-    Session.set('dropHover', null);
+    Session.set('dropHover', 'grey');
     var collection = Router.current().params._id;
 
     FS.Utility.eachFile(event, function(file) {
@@ -15,10 +15,10 @@ Template.dropZone.events({
     });
   },
   'dragover #dropzone': function() {
-    Session.set('dropHover', 'hover');
+    Session.set('dropHover', 'teal');
   },
   'dragleave #dropzone': function() {
-    Session.set('dropHover', null);
+    Session.set('dropHover', 'grey');
   }
 });
 
@@ -29,5 +29,5 @@ Template.dropZone.helpers({
 });
 
 Template.dropZone.onRendered(function() {
-  Session.set('dropHover', null);
+  Session.set('dropHover', 'grey');
 })

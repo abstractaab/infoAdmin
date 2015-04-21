@@ -27,8 +27,13 @@
 
 <template name="dropZone">
 
-  <div id="dropzone" class="dropzone {{dropHover}}">
-    <span>Drop files here</span>
+  <div id="dropzone" class="hide-on-small-only right">
+
+    <div class="card-panel {{dropHover}}">
+      <span class="white-text flow-text">
+        Drop files here
+      </span>
+    </div>
   </div>
 
 </template>
