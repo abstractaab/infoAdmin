@@ -91,6 +91,12 @@ Template.sortableItemTarget.helpers({
     if(data) {
       return data.class;
     }
+  },
+  locked: function (id) {
+    var data = Collections.findOne(id);
+    if(data) {
+      return data.locked;
+    }
   }
 });
 

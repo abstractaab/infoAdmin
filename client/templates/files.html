@@ -50,9 +50,11 @@
 					</label>
 				</div>
 			</div>
+			{{#unless collection.locked}}
 			<div class="col m6">
 				{{>dropZone}}
 			</div>
+			{{/unless}}
 		</div>
 
 		{{> typeDefinition}}

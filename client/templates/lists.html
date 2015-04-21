@@ -18,9 +18,11 @@
         <span class="name">{{name}}</span><br>
         Order {{order}}
       </div>
+      {{#unless locked collection}}
       <div class="card-action">
         <a class="close">Remove</a>
       </div>
+      {{/unless}}
     </div>
   </div>
 </template>
