@@ -1,5 +1,6 @@
 Template.dropZone.events({
   'dropped #dropzone': function(event, temp) {
+    Session.set('dropHover', null);
     var collection = Router.current().params._id;
 
     FS.Utility.eachFile(event, function(file) {
