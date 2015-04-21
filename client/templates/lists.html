@@ -1,6 +1,5 @@
 <template name="typeDefinition">
   <div class="sortable target row" id="object">
-    {{>dropZoneCard}}
     {{#sortable items=attributes animation="100" handle=".sortable-handle" ghostClass="sortable-ghost" options=attributesOptions}}
       {{> sortableItemTarget}}
     {{/sortable}}
@@ -26,19 +25,10 @@
   </div>
 </template>
 
-<template name="dropZoneCard">
-  <div class="col m3">
-    <div class="card blue-grey darken-1" id="dropzone">
-      <div class="card-image">
-        <img src="/drophere.png">
-      </div>
-      <div class="card-content white-text">
-        <ul>
-          <li>Resolution 1920x1080</li>
-          <li>JPG for photos</li>
-          <li>PNG for graphics</li>
-        </ul>
-      </div>
-    </div>
+<template name="dropZone">
+
+  <div id="dropzone" class="dropzone {{dropHover}}">
+    <span>Drop files here</span>
   </div>
+
 </template>

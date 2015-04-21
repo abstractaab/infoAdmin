@@ -44,3 +44,28 @@ optgroup {
 .at-error {
     color: #fff;
 }
+
+.dropzone {
+  position: relative;
+  border: 10px dotted #555;
+  border-radius: 20px;
+  color: #555;
+  font: bold 24px/75px arial;
+  height: 100px;
+  margin: 30px auto;
+  text-align: center;
+  width: 200px;
+}
+
+.dropzone.hover {
+  border: 10px solid #FE5;
+  color: #FE5;
+}
+
+.dropzone span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
