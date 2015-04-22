@@ -10,5 +10,10 @@ Accounts.validateNewUser(function (user) {
 		return true;
 	}
 
+	// or if they log in with azure AD
+	if (typeof(user.services.azureAd) === 'object') {
+		return true;
+	}
+
 	throw new Meteor.Error(403, "Not authorized to create new users");
 });
