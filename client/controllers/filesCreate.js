@@ -111,20 +111,22 @@ Template.filesCreate.events({
 	},
 	'submit .imageSave': function(e) {
 		e.preventDefault();
-		var collection = e.target.collection.value
-		var order = Attributes.find({collection: collection}).count();
 		if(e.target.collection.value) {
-			var newFile = new FS.File();
-			newFile.attachData(Session.get('image'))
-			newFile.name("createdImage.png");
-			var id = Files.insert(newFile);
-			Attributes.insert({
-				collection: collection,
-				fileId: id._id,
-				order: order
-			});
-			$('#modal1').closeModal();
-			toastr.success("File saved");
+			var collection = e.target.collection.value
+			for(i = e.target.quantity.value; i > 0; i--) {
+				var order = Attributes.find({collection: collection}).count();
+				var newFile = new FS.File();
+				newFile.attachData(Session.get('image'))
+				newFile.name("createdImage.png");
+				var id = Files.insert(newFile);
+				Attributes.insert({
+					collection: collection,
+					fileId: id._id,
+					order: order
+				});
+				$('#modal1').closeModal();
+				toastr.success("File saved");
+			}
 		}
 		//$('#modal1').closeModal();
 		//if(e.target.collection.value)
