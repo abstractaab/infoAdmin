@@ -28,25 +28,6 @@ Collections.attachSchema(new SimpleSchema({
     max: 200,
     optional: false
   },
-  class: {
-    type: String,
-    label: "Class",
-    optional: false,
-    autoform: {
-      type: "select",
-      options: function () {
-        return [
-          {label: "blue-grey darken-1", value: 'blue-grey darken-1'},
-          {label: "red darken-1", value: 'red darken-1'},
-          {label: "pink darken-1", value: 'pink darken-1'},
-          {label: "purple darken-1", value: 'purple darken-1'},
-          {label: "blue darken-2", value: 'blue darken-2'},
-          {label: "teal darken-3", value: 'teal darken-3'},
-          {label: "deep-orange darken-1", value: 'deep-orange darken-1'}
-        ];
-      }
-    }
-  },
   locked: {
     type: Boolean,
     optional: true
