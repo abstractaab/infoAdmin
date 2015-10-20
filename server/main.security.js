@@ -3,6 +3,10 @@ Attributes.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 Collections.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 
 Accounts.validateNewUser(function (user) {
+	if(Meteor.users.find().fetch().length === 0) {
+		return true;
+	}
+	
 	// Only admin can add users
 	var loggedInUser = Meteor.user();
 
