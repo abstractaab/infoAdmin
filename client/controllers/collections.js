@@ -23,7 +23,7 @@ Template.listCollections.events({
 	'click .delete': function () {
 		if(confirm("Are you sure? This will have consequences")) {
 			Collections.remove(this._id);
-			toastr.info(this.title + " removed");
+			Materialize.toast(this.title + " removed", 2000);
 		}
 	}
 });

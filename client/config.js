@@ -11,8 +11,3 @@ AccountsTemplates.configureRoute('ensureSignedIn', {
 
 
 AccountsTemplates.configureRoute('changePwd');
-
-toastr.options = {
-	"progressBar": false,
-	"positionClass": "toast-bottom-right",
-}

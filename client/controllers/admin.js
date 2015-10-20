@@ -9,10 +9,10 @@ Template.admin.events({
 			event.target.password.value, 
 			function (error, result) {
 				if(error) {
-					toastr.error(error.reason);
+					Materialize.toast(error.reason, 2000);
 				}
 				else {
-					toastr.success(result);
+					Materialize.toast(result, 2000);
 				}
 			});
 	}

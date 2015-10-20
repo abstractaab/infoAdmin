@@ -105,7 +105,7 @@ Template.sortable.events({
   'click .close': function (event, template) {
     // `this` is the data context set by the enclosing block helper (#each, here)
     template.collection.remove(this._id);
-    toastr.info("File removed");
+    Materialize.toast("File removed", 2000);
     Files.remove(this.fileId);
   }
 });

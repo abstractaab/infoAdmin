@@ -6,7 +6,7 @@ Template.dropZone.events({
     FS.Utility.eachFile(event, function(file) {
       var id = Files.insert(file);
       var order = Attributes.find({collection: collection}).count();
-      toastr.success(file.name + " uploaded");
+      Materialize.toast(file.name + " uploaded", 2000);
       Attributes.insert({
         collection: collection,
         fileId: id._id,

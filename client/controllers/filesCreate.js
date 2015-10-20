@@ -125,7 +125,7 @@ Template.filesCreate.events({
 					order: order
 				});
 				$('#modal1').closeModal();
-				toastr.success("File saved");
+				Materialize.toast("File saved", 2000);
 			}
 		}
 		//$('#modal1').closeModal();
