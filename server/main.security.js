@@ -4,6 +4,7 @@ Collections.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 
 Accounts.validateNewUser(function (user) {
 	if(Meteor.users.find().fetch().length === 0) {
+		Roles.addUsersToRoles(user._id, 'admin');
 		return true;
 	}
 	
