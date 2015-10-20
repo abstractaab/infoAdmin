@@ -1,6 +1,7 @@
 Files.files.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 Attributes.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 Collections.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
+Orders.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 
 Accounts.validateNewUser(function (user) {
 	if(Meteor.users.find().fetch().length === 0) {

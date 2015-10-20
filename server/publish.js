@@ -15,3 +15,14 @@ Meteor.publish('Attributes', function () {
   	return Attributes.find();
 });
 
+
+Meteor.publish('Orders', function () {
+	if(!this.userId) { return []; }
+  	return Orders.find(
+  		{},
+  		{
+  			sort: { date: -1 },
+  			limit: 5
+  		}
+  	)
+});

@@ -11,6 +11,9 @@ Router.route('/files/:_id', {
   template: 'filesList',
 });
 
+Router.route('/order', {
+  template: 'order',
+});
 
 Router.route('/collections/add', {
   template: 'CollectionsAdd',
