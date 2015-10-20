@@ -29,7 +29,7 @@ rubaxa:sortable
 materialize:materialize@=0.97.0
 babrahams:constellation
 aldeed:autoform
-#gildaspk:autoform-materialize
+gildaspk:autoform-materialize
 #gildaspk:autoform-file-materialize 
 aldeed:collection2
 aldeed:simple-schema
