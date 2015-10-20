@@ -58,6 +58,9 @@ Template.order.events({
 	'click .rerender': function () {
 		renderCanvas();
 	},
+	'click .delete': function () {
+		Orders.remove(this._id);
+	},
 	'submit .ordersForm': function (e) {
 		e.preventDefault();
 		if(e.target.collection.value !== "") {
@@ -100,5 +103,8 @@ Template.order.helpers({
 	collections: function () {
 		console.log(Collections.find().fetch());
 		return Collections.find();
+	},
+	orderRows: function() {
+		return Orders.find({}, { sort: { date: -1 }, limit: 5 }).fetch();
 	}
 });
