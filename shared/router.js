@@ -3,10 +3,6 @@ Router.route('/', function () {
   this.render('Home');
 });
 
-Router.route('/files/add', {
-  template: 'filesAdd',
-});
-
 Router.route('/files/create', {
   template: 'filesCreate',
 });
