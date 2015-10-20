@@ -1,28 +1,10 @@
 <template name="addCollection">
     {{#autoForm collection="Collections" id="insertCollection" type="insert"}}
-		<div class="row">
-			<div class="col m8">
-		    	{{> afQuickField name="title"}}
-		    	{{> afQuickField name="class"}}
-	  		</div>
-			<div class="col m4">
-				<div class="card {{currentValue 'class'}}">
-					<div class="card-image">
-						<img src="http://materializecss.com/images/sample-1.jpg">
-					</div>
-					<div class="card-content white-text">
-						Example text
-					</div>
-					<div class="card-action">
-						<a class="">Remove</a>
-					</div>
-				</div>
-			  	<button class="waves-effect waves-light btn" type="submit">
-			  		<i class="mdi-content-save left"></i>
-			  		Submit
-			  	</button>
-			</div>
-	  	</div>
+		{{> afQuickField name="title"}}
+		<button class="waves-effect waves-light btn" type="submit">
+			<i class="mdi-content-save left"></i>
+			Submit
+		</button>
     {{/autoForm}}
 </template>
 
@@ -42,14 +24,11 @@
 		</li>
 		{{/each}}
 	</ul>
+
+	<h4>Create collection</h4>
+	{{ > addCollection }}
 </template>
 
-<template name="CollectionsAdd">
-	<div class="container">
-		<h2>Add collection</h2>
-		{{>addCollection}}
-	</div>
-</template>
 
 <template name="CollectionsList">
 	<div class="container">
