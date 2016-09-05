@@ -3,12 +3,12 @@ Attributes.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 Collections.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 Orders.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
 
-Accounts.validateNewUser(function (user) {
+/*Accounts.validateNewUser(function (user) {
 	if(Meteor.users.find().fetch().length === 0) {
 		Roles.addUsersToRoles(user._id, 'admin');
 		return true;
 	}
-	
+
 	// Only admin can add users
 	var loggedInUser = Meteor.user();
 
@@ -22,4 +22,4 @@ Accounts.validateNewUser(function (user) {
 	}
 
 	throw new Meteor.Error(403, "Not authorized to create new users");
-});
+});*/
